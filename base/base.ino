@@ -31,7 +31,7 @@ void loop(){
     }
     actu_control(-1);
     delay(2000);
-
+    actu_control(0);
 }
 
 void actu_control(int dir){
