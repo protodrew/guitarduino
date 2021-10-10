@@ -1,4 +1,4 @@
-int solenoid[4] = {4,5,6,7}; // solenoid pins
+int solenoid[4] = {7,6,5,4}; // solenoid pins
 int actuator[2] = {2,3};
 int scale1[6][4] = {{1,1,0,1},{1,0,1,1},{1,0,1,1},{1,0,1,0},{1,1,0,1},{1,1,0,1}};
 int strlength = 423;
@@ -9,6 +9,8 @@ void setup() {
   pinMode(solenoid[3], OUTPUT);
   pinMode(actuator[0], OUTPUT);
   pinMode(actuator[1], OUTPUT);
+  actu_control(-1);
+    delay(3000);
 }
 
 void loop(){
@@ -22,7 +24,7 @@ void loop(){
         if(scale1[x][s] == 1){
         digitalWrite(solenoid[s],HIGH);
          
-        delay(150);
+        delay(200);
         digitalWrite(solenoid[s],LOW);
         
         delay(150);
@@ -35,7 +37,7 @@ void loop(){
       
     }
     actu_control(-1);
-    delay(2200);
+    delay(3000);
     actu_control(0);
 }
 
